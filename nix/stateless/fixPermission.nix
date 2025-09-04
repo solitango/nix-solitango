@@ -5,7 +5,7 @@
   ...
 }: let
   enabled = config.solitango.stateless.enable;
-  persistentStorageMountpoint = config.solitango.persistentStorageMountpoint;
+  persistentStorageMountpoint = config.solitango.stateless.persistentStorageMountpoint;
 in
   lib.mkIf enabled {
     system.activationScripts."createPersistentStorageDirs".deps = ["var-lib-private-permissions" "users" "groups"];
