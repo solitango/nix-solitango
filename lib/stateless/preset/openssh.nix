@@ -1,9 +1,4 @@
-{
-  config,
-  lib,
-  ...
-}: let
-  persistentStorageMountpoint = config.solitango.stateless.persistentStorageMountpoint;
-in {
-  environment.persistence."${persistentStorageMountpoint}".files = lib.mkIf config.services.openssh.enable (builtins.map (key: key.path) config.services.openssh.hostKeys);
+(import ./lib/mkDynamicPreset.nix) {
+  checkOptionAccessor = config: config.services.openssh.enable;
+  persistentFilesAccessor = {config, ...}: (builtins.map (key: key.path) config.services.openssh.hostKeys);
 }

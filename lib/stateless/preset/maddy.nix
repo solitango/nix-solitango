@@ -1,11 +1,4 @@
-{
-  config,
-  lib,
-  ...
-}: let
-  persistentStorageMountpoint = config.solitango.stateless.persistentStorageMountpoint;
-in {
-  environment.persistence."${persistentStorageMountpoint}".directories = lib.mkIf config.services.maddy.enable [
-    "/var/lib/maddy"
-  ];
+(import ./lib/mkPreset.nix) {
+  checkOptionAccessor = config: config.services.maddy.enable;
+  persistentDirectories = ["/var/lib/maddy"];
 }
