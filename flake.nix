@@ -16,7 +16,7 @@
           disko.nixosModules.disko
           impermanence.nixosModules.impermanence
 
-          ./lib
+          ./nix
         ];
       };
     };
