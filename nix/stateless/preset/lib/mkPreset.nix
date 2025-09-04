@@ -11,6 +11,8 @@
   persistentStorageMountpoint = config.solitango.stateless.persistentStorageMountpoint;
 in
   lib.mkIf enabled {
-    environment.persistence."${persistentStorageMountpoint}".directories = persistentDirectories;
-    environment.persistence."${persistentStorageMountpoint}".files = persistentFiles;
+    environment.persistence."${persistentStorageMountpoint}" = {
+      directories = persistentDirectories;
+      files = persistentFiles;
+    };
   }
