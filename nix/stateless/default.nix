@@ -10,7 +10,7 @@
     enable = lib.mkEnableOption "Whether to make this machine stateless.";
 
     persistentStorageMountpoint = lib.mkOption {
-      type = lib.types.string;
+      type = lib.types.str;
       default = "/persistent";
       description = "The mountpoint for the persistent storage.";
     };
