@@ -1,5 +1,5 @@
 {
   imports = [
-    ./stateless.nix
+    ./stateless
   ];
 }
