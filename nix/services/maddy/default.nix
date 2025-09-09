@@ -11,17 +11,17 @@ in {
     enable = lib.mkEnableOption "Maddy";
 
     user = lib.mkOption {
-      type = lib.types.string;
+      type = lib.types.str;
       inherit (options.services.maddy.user) default;
     };
 
     primaryDomain = lib.mkOption {
-      type = lib.types.string;
+      type = lib.types.str;
       example = "solitango.com";
     };
 
     hostname = lib.mkOption {
-      type = lib.types.string;
+      type = lib.types.str;
       default = "mail.${cfg.primaryDomain}";
     };
   };
