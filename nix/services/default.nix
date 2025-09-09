@@ -1,6 +1,6 @@
 {
   imports = [
     ./maddy
-    ./ssh
+    ./openssh
   ];
 }
