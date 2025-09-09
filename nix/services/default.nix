@@ -1,5 +1,6 @@
 {
   imports = [
     ./maddy
+    ./ssh
   ];
 }
