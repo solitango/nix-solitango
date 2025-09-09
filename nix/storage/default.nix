@@ -13,18 +13,12 @@
 
       files = lib.mkOption {
         type = lib.types.listOf lib.types.str;
-        default = [
-          "/etc/machine-id"
-        ];
+        default = [];
       };
 
       directories = lib.mkOption {
         type = lib.types.listOf lib.types.str;
-        default = [
-          "/var/log"
-          "/var/lib/nixos"
-          "/var/lib/systemd/coredump"
-        ];
+        default = [];
       };
     };
 
@@ -41,6 +35,18 @@
         type = lib.types.string;
       };
     };
+  };
+
+  solitango.storage.persistent = {
+    files = [
+      "/etc/machine-id"
+    ];
+
+    directories = [
+      "/var/log"
+      "/var/lib/nixos"
+      "/var/lib/systemd/coredump"
+    ];
   };
 
   imports = [
