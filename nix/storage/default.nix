@@ -37,16 +37,18 @@
     };
   };
 
-  solitango.storage.persistent = {
-    files = [
-      "/etc/machine-id"
-    ];
+  config = {
+    solitango.storage.persistent = {
+      files = [
+        "/etc/machine-id"
+      ];
 
-    directories = [
-      "/var/log"
-      "/var/lib/nixos"
-      "/var/lib/systemd/coredump"
-    ];
+      directories = [
+        "/var/log"
+        "/var/lib/nixos"
+        "/var/lib/systemd/coredump"
+      ];
+    };
   };
 
   imports = [
