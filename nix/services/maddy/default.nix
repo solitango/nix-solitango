@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  options,
   ...
 }: let
   cfg = config.solitango.services.maddy;
@@ -11,7 +12,7 @@ in {
 
     user = lib.mkOption {
       type = lib.types.string;
-      default = "maddy";
+      inherit (options.services.maddy.user) default;
     };
 
     primaryDomain = lib.mkOption {
