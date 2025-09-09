@@ -29,8 +29,9 @@ in {
       };
     };
 
-    solitango.storage.persistent.files = (
-      builtins.map (key: key.path) config.services.openssh.hostKeys
-    );
+    solitango.storage.persistent.files = [
+      "/etc/ssh/ssh_host_ed25519_key"
+      "/etc/ssh/ssh_host_ed25519_key.pub"
+    ];
   };
 }
