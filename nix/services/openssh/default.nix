@@ -3,9 +3,9 @@
   lib,
   ...
 }: let
-  cfg = config.solitango.services.ssh;
+  cfg = config.solitango.services.openssh;
 in {
-  options.solitango.services.ssh = {
+  options.solitango.services.openssh = {
     enable = lib.mkEnableOption "ssh";
   };
 
