@@ -1,7 +1,7 @@
 {lib, ...}: {
   options.solitango.storage = {
     mainDisk = lib.mkOption {
-      type = lib.types.string;
+      type = lib.types.str;
       example = "/dev/sda";
     };
 
