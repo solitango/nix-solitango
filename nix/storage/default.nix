@@ -27,12 +27,27 @@
         ];
       };
     };
+
+    restic = {
+      passwordFile = lib.mkOption {
+        type = lib.types.string;
+      };
+
+      repositoryFile = lib.mkOption {
+        type = lib.types.string;
+      };
+
+      environmentFile = lib.mkOption {
+        type = lib.types.string;
+      };
+    };
   };
 
   imports = [
     ./disk.nix
     ./fixPermission.nix
     ./impermanence.nix
+    ./restic.nix
     ./snapper.nix
   ];
 }
