@@ -33,7 +33,7 @@ in {
       993
     ];
 
-    solitango.storage.persistentDirectories = [
+    solitango.storage.persistent.directories = [
       "/var/lib/maddy"
     ];
 
