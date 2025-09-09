@@ -17,7 +17,6 @@ in {
 
       hostKeys = [
         {
-          comment = "key comment";
           path = "/etc/ssh/ssh_host_ed25519_key";
           rounds = 100;
           type = "ed25519";
@@ -30,8 +29,8 @@ in {
       };
     };
 
-    solitango.storage.persistent.directories = [
-      "/etc/ssh/ssh_host_ed25519_key"
-    ];
+    solitango.storage.persistent.files = (
+      builtins.map (key: key.path) config.services.openssh.hostKeys
+    );
   };
 }
