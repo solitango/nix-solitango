@@ -54,7 +54,7 @@ in {
                   };
 
                   "@persistent" = {
-                    mountpoint = "${cfg.persistentStorageMountpoint}";
+                    mountpoint = "${cfg.persistent.mountpoint}";
                     mountOptions = [
                       "compress=zstd"
                       "noatime"
@@ -79,11 +79,11 @@ in {
   };
 
   fileSystems."/nix".neededForBoot = true;
-  fileSystems."${cfg.persistentStorageMountpoint}".neededForBoot = true;
+  fileSystems."${cfg.persistent.mountpoint}".neededForBoot = true;
 
   virtualisation.vmVariantWithDisko.virtualisation.fileSystems."/nix".neededForBoot = true;
   virtualisation.vmVariantWithDisko.virtualisation.fileSystems."${
-    cfg.persistentStorageMountpoint
+    cfg.persistent.mountpoint
   }".neededForBoot =
     true;
 }

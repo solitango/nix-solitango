@@ -2,7 +2,7 @@
   cfg = config.solitango.storage;
 in {
   services.snapper.configs.persistent = {
-    SUBVOLUME = cfg.persistentStorageMountpoint;
+    SUBVOLUME = cfg.persistent.mountpoint;
 
     TIMELINE_CREATE = true;
     TIMELINE_CLEANUP = true;

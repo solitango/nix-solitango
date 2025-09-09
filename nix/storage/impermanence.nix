@@ -1,8 +1,7 @@
 {config, ...}: let
   cfg = config.solitango.storage;
 in {
-  environment.persistence."${cfg.persistentStorageMountpoint}" = {
-    files = cfg.persistentFiles;
-    directories = cfg.persistentDirectories;
+  environment.persistence."${cfg.persistent.mountpoint}" = {
+    inherit (cfg.persistent) files directories;
   };
 }
